@@ -1,0 +1,26 @@
+<div class="container " *ngIf="token">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg-7 p-3 p-lg-5 pt-lg-3">
+        <h1 class="display-4 fw-bold lh-1 text-body-emphasis">Upload your photos!</h1>
+        <p class="lead">Please select your photos!</p>
+        <div class="d-grid gap-2 d-md-flex justify-content-md-start mb-4 mb-lg-3">
+          <label for="filePicker" class="btn btn-primary btn-lg px-4 me-md-2 fw-bold">{{btnText}}</label>
+          <input type="file" id="filePicker" (change)="onImagePicked($event)" style="display: none">
+          <button type="button" class="btn btn-success btn-lg px-4 me-md-2 fw-bold" (click)="onUpload()" [disabled]="uploaded">Upload photo</button>
+        </div>
+        <div *ngIf="uploaded" class="successful">You successfully uploaded your photo!</div>
+        <div *ngIf="error" class="not-successful">Image is already uploaded!</div>
+      </div>
+      <div class="col-lg-4 p-0 overflow-hidden shadow-lg mb-3">
+        <div class="image-preview" *ngIf="imagePreview">
+          <img [src]="imagePreview" alt="Image Preview" class="img-fluid"> 
+        </div>
+      </div>
+    </div>
+</div>
+
+<div class="container my-5 text-center" *ngIf="token === null">
+  <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg card">
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">You have to log in first!</h1>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.err-message{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    color: red;
+    font-weight: bold;
+    font-size: larger;
+}

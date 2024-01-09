@@ -1,0 +1,33 @@
+<div class="container col-xl-10 col-xxl-8 px-4 py-5">
+  <div class="row align-items-center g-lg-5 py-5">
+      <div class="col-10 col-sm-8 col-lg-6">
+          <img src="https://garimashares.com/wp-content/uploads/2022/02/pexels-photo-936194-scaled.jpeg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" loading="lazy">
+        </div>
+    <div class="col-md-10 mx-auto col-lg-5" *ngIf="token === null; else elseBlock">
+        <div class="form-floating mb-3">
+          <input type="text" class="form-control m-2" name="name"  [(ngModel)]="userName"/>
+          <label for="floatingInput" style="margin-left: 1px;">Full Name</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="email" class="form-control m-2" name="email" [(ngModel)]="userEmail"/>
+          <label for="floatingInput" style="margin-left: 1px;">Email</label>
+        </div>
+        <div class="form-floating mb-3">
+          <input type="password" class="form-control m-2" name="password" [(ngModel)]="userPassword"/>
+          <label for="floatingPassword" style="margin-left: 1px;">Password</label>
+        </div>
+        <div class="checkbox mb-3">
+        </div>
+        <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="userEmail=== '' || userPassword === '' || userName === '' " (click)="onRegister()">Sign up</button>
+        <hr class="my-4">
+        <small class="text-body-secondary">By clicking Sign up, you agree to our Terms and Conditions.</small>
+    </div>
+    <ng-template #elseBlock>
+      <div class="col-md-10 mx-auto col-lg-5">
+        <h1>You are already loged in!</h1>
+      </div>
+    </ng-template>
+    <div class="err-message" *ngIf="errMessage">{{errMessage}}</div>
+  </div>
+</div>
+

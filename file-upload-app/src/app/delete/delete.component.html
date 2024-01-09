@@ -1,0 +1,31 @@
+<div class="container my-5 text-center" *ngIf="token">
+    <div class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg">
+      <div class="col-lg p-3 p-lg-5 pt-lg-3">
+        <h4 class="display-5 fw-bold lh-1 text-body-emphasis">Delete photos</h4>
+        <hr />
+        <div class="row row-cols-1 row-cols-md-3 g-4">
+          <div class="col" *ngFor="let image of images">
+            <div class="card h-100" (click)="toggleSelect(image)" [ngClass]="{'selected': image.selected}">
+              <div>
+                <img [src]="'assets/' + image.image_path" alt="Image" class="img-show" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button class="btn btn-primary my-3 w-50" (click)="deleteSelected()">Delete</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container my-5 text-center" *ngIf="token === null">
+    <div
+      class="row p-4 pb-0 pe-lg-0 pt-lg-5 align-items-center rounded-3 border shadow-lg card"
+    >
+      <h1 class="display-4 fw-bold lh-1 text-body-emphasis">
+        You have to log in first!
+      </h1>
+    </div>
+  </div>
+  

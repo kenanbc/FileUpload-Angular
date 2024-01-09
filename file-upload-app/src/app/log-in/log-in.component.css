@@ -1,0 +1,9 @@
+.error{
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    color: red;
+    font-weight: bold;
+}

@@ -1,0 +1,14 @@
+.card{
+    min-height: 10rem;
+}
+
+.img-show{
+    max-width: 300px;
+    max-height: 200px;
+    margin: auto;
+}
+
+.selected {
+    border: 2px solid blue;
+  }
+  
