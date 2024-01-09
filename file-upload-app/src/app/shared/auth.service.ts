@@ -1,8 +1,7 @@
-
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import { SharedDataService } from './shared-data.service';
+
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +9,7 @@ import { SharedDataService } from './shared-data.service';
 export class AuthService {
   private apiUrl = 'http://localhost:3000';
 
-  constructor(private http: HttpClient,
-    private sharedData: SharedDataService) {}
+  constructor(private http: HttpClient) {}
 
   login(email: string, password: string): Observable<any> {
     const userData = { email: email, password: password };

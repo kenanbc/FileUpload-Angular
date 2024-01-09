@@ -78,7 +78,7 @@ function verifyToken(req, res, next) {
   if (typeof bearerHeader !== "undefined") {
     const bearerToken = bearerHeader.split(" ")[1];
     req.token = bearerToken;
-    console.log(req.token);
+    //console.log(req.token);
     next();
   } else {
     res.sendStatus(403);
@@ -153,13 +153,13 @@ async function checkImageEx(user_id, imagePath) {
   const imageP =
     `uploads/user_${user_id}\\` +
     imagePath.substring(imagePath.lastIndexOf("\\"));
-  console.log(imageP);
+  //console.log(imageP);
   return new Promise((resolve, reject) => {
     db.query(
       `SELECT COUNT(*) as count FROM images WHERE user_id = ? AND image_path LIKE ?`,
       [user_id, imageP],
       (err, result) => {
-        console.log(result[0].count);
+        //console.log(result[0].count);
         if (err) {
           console.log(err);
           reject(err);
@@ -174,7 +174,7 @@ async function checkImageEx(user_id, imagePath) {
 app.post("/uploadImage", upload.single("image"), async (req, res) => {
   const userId = parseInt(req.body.user_id, 10);
   const imageEx = await checkImageEx(userId, req.file.path);
-  console.log(imageEx);
+  //console.log(imageEx);
   if (imageEx) {
     const relativePath = path.relative(
       "../file-upload-app/src/assets/uploads",
@@ -234,7 +234,7 @@ app.delete("/delete/:userId", verifyToken, async (req, res) => {
     const { imagePaths } = req.body.paths;
     const userId = req.params.userId;
 
-    const results = await Promise.all(
+    await Promise.all(
       imagePaths.map(async (element) => {
         const imageName = element.substring(element.lastIndexOf("\\") + 1);
         const query = "DELETE FROM images WHERE user_id = ? AND image_path = ?";
