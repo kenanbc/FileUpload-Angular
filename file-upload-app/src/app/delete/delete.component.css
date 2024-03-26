@@ -1,14 +1,18 @@
 .card{
-    min-height: 10rem;
-}
-
-.img-show{
-    max-width: 300px;
+    min-height: 200px;
+    min-width: 380px;
+    max-width: 380px;
     max-height: 200px;
-    margin: auto;
+    overflow: hidden;
+  }
+  
+.img-show {
+    width: auto;
+    height: auto;
+    max-width: 100%;
+    max-height: 100%;
 }
 
 .selected {
-    border: 2px solid blue;
+    border: 3px solid blue;
   }
-  

@@ -3,17 +3,18 @@ input[type="file"]{
 }
 
 .image-preview {
+    min-height: auto;
     max-width: 500px;
-    max-height: 500px;
+    max-height: 280px;
     overflow: hidden;
-    position: relative;
+    border-radius: 3%;
 }
 
 .image-preview img {
     width: auto;
-    height: 100%;
+    height: auto;
     max-width: 100%;
-    object-fit: cover;
+    max-height: 100%;
 }
 
 .card{
@@ -29,3 +30,4 @@ input[type="file"]{
     color: red;
     font-weight: bold;
 }
+

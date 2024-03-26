@@ -23,15 +23,12 @@ export class ViewComponent implements OnInit {
 
     this.token = this.authService.getToken();
     this.userId = Number(this.sharedData.getUserID());
-    //console.log("Sad je USER ID : " + this.userId);
     this.http.get<any>(`http://localhost:3000/images/${this.userId}`, {
       headers: {
         'Authorization': `Bearer ${this.token}`
       }
     }).subscribe((data) => {
-      //console.log(data);
       this.images = data.result;
-      //console.log(data.result);
     });
 
   }

@@ -11,7 +11,6 @@ import { AuthService } from '../shared/auth.service';
 })
 export class UploadComponent {
   imagePreview: string = '';
-  //receivedBoolean: boolean = false;
   selectedImage: File | null = null;
   userId: number = 0;
   token: string | null = null;
@@ -30,13 +29,6 @@ export class UploadComponent {
     this.userId = Number(this.sharedDataService.getUserID());
     this.token = this.authService.getToken();
     console.log(this.token);
-    // this.sharedDataService.userID$.subscribe(value => {
-    //   this.userId = value;
-    // });
-
-    // this.sharedDataService.booleanValue$.subscribe(value => {
-    //   this.receivedBoolean = value;
-    // });
   }
 
   onImagePicked(event: Event) {
@@ -68,7 +60,6 @@ export class UploadComponent {
               }
             },
             (error) => {
-              //console.log("Error je: " + JSON.stringify(error));
               this.error = error;
             }
           );

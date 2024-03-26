@@ -33,9 +33,7 @@ export class DeleteComponent {
         'Authorization': `Bearer ${this.token}`
       }
     }).subscribe((data) => {
-      // console.log(data);
       this.images = data.result;
-      // console.log(data.result);
     });
 
   }
@@ -63,7 +61,6 @@ export class DeleteComponent {
     }).subscribe((data) => {
       this.images = this.images.filter(image => !this.selectedImagePaths. includes(image.image_path));
       this.selectedImagePaths = [];
-      // console.log("Data je ovdje : " + JSON.stringify(data));
     });
   }
 }

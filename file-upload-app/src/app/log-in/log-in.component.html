@@ -1,56 +1,30 @@
 <div class="container col-xl-10 col-xxl-8 px-4 py-5">
   <div class="row align-items-center g-lg-5 py-5">
     <div class="col-10 col-sm-8 col-lg-6">
-      <img
-        src="https://garimashares.com/wp-content/uploads/2022/02/pexels-photo-936194-scaled.jpeg"
-        class="d-block mx-lg-auto img-fluid"
-        alt="Bootstrap Themes"
-        width="700"
-        height="500"
-        loading="lazy"
-      />
+      <img src="https://garimashares.com/wp-content/uploads/2022/02/pexels-photo-936194-scaled.jpeg" class="d-block mx-lg-auto img-fluid" alt="Bootstrap Themes" width="700" height="500" style="border-radius: 3%;"/>
     </div>
-    <div
-      class="col-md-10 mx-auto col-lg-5"
-      *ngIf="token === null; else elseBlock"
-    >
+    <div class="col-md-10 mx-auto col-lg-5" *ngIf="token === null; else elseBlock">
       <form class="p-4 p-md-5 border rounded-3 bg-body-tertiary">
         <div class="form-floating mb-3">
-          <input
-            type="email"
-            class="form-control m-2"
-            name="email"
-            [(ngModel)]="userEmail"
-          />
+          <input type="email" class="form-control m-2" name="email" [(ngModel)]="userEmail" />
           <label for="floatingInput" style="margin-left: 1px">Email</label>
         </div>
         <div class="form-floating mb-3">
-          <input
-            type="password"
-            class="form-control m-2"
-            name="password"
-            [(ngModel)]="userPassword"
-          />
-          <label for="floatingPassword" style="margin-left: 1px"
-            >Password</label
-          >
+          <input type="password" class="form-control m-2" name="password" [(ngModel)]="userPassword" />
+          <label for="floatingPassword" style="margin-left: 1px">
+            Password
+          </label>
         </div>
-        <div class="checkbox mb-3"></div>
-        <button
-          class="w-100 btn btn-lg btn-primary"
-          type="submit"
-          [disabled]="userEmail === '' || userPassword === ''"
-          (click)="onClicked()"
-        >
+        <button class="w-100 btn btn-lg btn-primary" type="submit" [disabled]="userEmail === '' || userPassword === ''" (click)="onClicked()">
           Log in
         </button>
         <div *ngIf="errorMessage" class="error"> 
           This password is incorrect!
         </div>
         <hr class="my-4" />
-        <small class="text-body-secondary"
-          >Best app for uploading your files on the internet!</small
-        >
+        <small class="text-body-secondary">
+          Best app for uploading your files on the internet!
+          </small>
       </form>
     </div>
     <ng-template #elseBlock>

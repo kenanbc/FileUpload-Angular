@@ -21,13 +21,10 @@ export class LogInComponent {
   userEmail: string = '';
   userPassword: string = '';
   token: string | null = null;
-  //receivedBoolean: boolean = false;
+
   errorMessage: string | null = null;
 
   ngOnInit() {
-    // this.sharedDataService.booleanValue$.subscribe((value) => {
-    //   this.receivedBoolean = value;
-    // });
     this.token = this.authService.getToken();
   }
 
@@ -36,15 +33,11 @@ export class LogInComponent {
       (data: UserModel) => {
         this.token = data.token;
         this.authService.saveToken(this.token);
-        //this.sharedDataService.updateBooleanValue(true);
-        //this.sharedDataService.updateUserId(odgovor.result_id);
         this.sharedDataService.saveUserID(data.result_id);
-        //console.log(this.token);
         this.router.navigate(['/upload']);
       },
       (error) => {
         this.errorMessage = error;
-        //console.log('Greska prilikom prijave:', error);
       }
     );
   }
