@@ -16,3 +16,4 @@ This project represents my first foray into web development using Angular and No
 - **Backend**: Node.js
 - **Database**: MySQL
 </p>
+![home](https://github.com/kenanbc/FileUpload-Angular/assets/43729348/9fe427fa-1194-4799-b529-d6e75072d8d9)
